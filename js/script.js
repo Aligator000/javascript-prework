@@ -1,17 +1,16 @@
-var argButtonName, buttonPaper, buttonRock, buttonScissors;
+//var argButtonName; 
 
-buttonRock = document.getElementById('button-rock');
-buttonPaper = document.getElementById('button-paper');
-buttonScissors = document.getElementById('button-scissors');
+const buttonRock = document.getElementById('button-rock');
+const buttonPaper = document.getElementById('button-paper');
+const buttonScissors = document.getElementById('button-scissors');
 
 /*function logButtonClicked(argButtonName) {
   clearMessages();
   console.log(argButtonName + ' został kliknięty');
 }*/
 
-var argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput, playerResult, computerResult;
-var playerResult = 0;
-var computerResult = 0;
+//let playerResult = 0;
+//let computerResult = 0;
 
 function getMoveName(argMoveId) {
   console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
