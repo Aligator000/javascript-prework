@@ -9,7 +9,9 @@ buttonScissors = document.getElementById('button-scissors');
   console.log(argButtonName + ' został kliknięty');
 }*/
 
-var argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput;
+var argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput, playerResult, computerResult;
+var playerResult = 0;
+var computerResult = 0;
 
 function getMoveName(argMoveId) {
   console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
