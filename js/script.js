@@ -1,38 +1,32 @@
-//var argButtonName; 
-
 const buttonRock = document.getElementById('button-rock');
 const buttonPaper = document.getElementById('button-paper');
 const buttonScissors = document.getElementById('button-scissors');
 
-/*function logButtonClicked(argButtonName) {
-  clearMessages();
-  console.log(argButtonName + ' został kliknięty');
-}*/
-
-//let playerResult = 0;
-//let computerResult = 0;
+const stone = 'kamien';
+const paper = 'papier';
+const scissors = 'nożyce';
 
 function getMoveName(argMoveId) {
   console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
   if (argMoveId == 1) {
-    return 'kamień';
+    return stone;
   } else if (argMoveId == 2) {
-    return 'papier';
+    return paper;
   } else if (argMoveId == 3) {
-    return 'nożyce';
+    return scissors;
   } else {
     printMessage('Nie znam ruchu o id ' + argMoveId + '. Zakładam, że chodziło o "kamień".');
-    return 'kamień';
+    return stone;
   }
 }
 
 function displayResult(argPlayerMove, argComputerMove) {
   console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
-  if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
+  if (argPlayerMove == paper && argComputerMove == stone) {
     printMessage('Wygrywasz!');
-  } else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
+  } else if (argPlayerMove == stone && argComputerMove == scissors) {
     printMessage('Wygrywasz!');
-  } else if (argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
+  } else if (argPlayerMove == scissors && argComputerMove == paper) {
     printMessage('Wygrywasz!');
   } else if (argPlayerMove == argComputerMove) {
     printMessage('Remis!');
@@ -43,13 +37,13 @@ function displayResult(argPlayerMove, argComputerMove) {
 }
 
 buttonRock.addEventListener('click', function(){
-  playGame('kamień')
+  playGame(stone)
  });
 buttonPaper.addEventListener('click', function(){ 
-  playGame('papier') 
+  playGame(paper) 
 });
 buttonScissors.addEventListener('click', function(){
-  playGame('nożyce')
+  playGame(scissors)
 });
 
 function playGame(playerMove) {
