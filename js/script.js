@@ -2,6 +2,9 @@ const buttonRock = document.getElementById('button-rock');
 const buttonPaper = document.getElementById('button-paper');
 const buttonScissors = document.getElementById('button-scissors');
 
+let playerResult = 0;
+let computerResult = 0;
+
 const stone = 'kamien';
 const paper = 'papier';
 const scissors = 'nożyce';
@@ -20,27 +23,44 @@ function getMoveName(argMoveId) {
   }
 }
 
+function playerWin() {
+  playerResult++;
+  printMessage('Wygrywasz!');
+}
+
+function draw() {
+  playerResult++;
+  computerResult++;
+  printMessage('Remis!');
+}
+
+function computerWin() {
+  computerResult++;
+  printMessage('Przegrywasz :(');
+}
+
 function displayResult(argPlayerMove, argComputerMove) {
   console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
   if (argPlayerMove == paper && argComputerMove == stone) {
-    printMessage('Wygrywasz!');
+    playerWin()
   } else if (argPlayerMove == stone && argComputerMove == scissors) {
-    printMessage('Wygrywasz!');
+    playerWin()
   } else if (argPlayerMove == scissors && argComputerMove == paper) {
-    printMessage('Wygrywasz!');
+    playerWin()
   } else if (argPlayerMove == argComputerMove) {
-    printMessage('Remis!');
+    draw()
   } else {
-    printMessage('Przegrywasz :(');
+    computerWin()
   }
   printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+  displayBattleResult(playerResult, computerResult);
 }
 
 buttonRock.addEventListener('click', function(){
   playGame(stone)
  });
-buttonPaper.addEventListener('click', function(){ 
-  playGame(paper) 
+buttonPaper.addEventListener('click', function(){
+  playGame(paper)
 });
 buttonScissors.addEventListener('click', function(){
   playGame(scissors)
@@ -56,6 +76,7 @@ function playGame(playerMove) {
   console.log('ruch komputera to: ' + computerMove);
   displayResult(playerMove, computerMove);
 }
+
 
 
 

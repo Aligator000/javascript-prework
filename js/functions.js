@@ -8,3 +8,9 @@ function clearMessages(){
 	document.getElementById('messages').innerHTML = '';
 }
 
+function displayBattleResult(playerResult, computerResult) {
+	const computerDiv = document.getElementById('computer-result');
+	const playerDiv = document.getElementById('player-result');
+	computerDiv.innerHTML = 'Computer result: ' + computerResult;
+	playerDiv.innerHTML = 'Player result: ' + playerResult;
+}

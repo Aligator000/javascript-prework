@@ -18,3 +18,10 @@ img {
     font-family: 'Josefin Sans', sans-serif;
     margin-top: 50px;
 }
+
+#result {
+    font-size: 14px;
+    font-family:'Josefin Sans', sans-serif;
+    color: grey;
+    margin-top: 30px;
+}
